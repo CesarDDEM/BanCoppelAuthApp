@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0428ED"
+    tools:context=".AccountSummaryActivity">
+
+    <!-- Logo de BanCoppel -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="229dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo_bancoppel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <!-- Mensaje de Bienvenida -->
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola, CESAR!"
+        android:textColor="#FAF6F6"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Foto del Titular -->
+    <ImageView
+        android:id="@+id/userPhotoImageView"
+        android:layout_width="62dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/user_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
+
+    <!-- Texto Mi Cuenta -->
+    <TextView
+        android:id="@+id/myAccountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:text="Mi Cuenta"
+        android:textColor="#FDFCFC"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPhotoImageView" />
+
+    <!-- Tarjeta de Débito -->
+    <ImageView
+        android:id="@+id/debitCardImageView"
+        android:layout_width="244dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/debit_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myAccountTextView"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <!-- Texto Saldo -->
+    <TextView
+        android:id="@+id/balanceTextView"
+        android:layout_width="136dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:autoSizeTextType="uniform"
+        android:text="Saldo: $25,999.00"
+        android:textColor="#FDFCFC"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debitCardImageView" />
+
+    <!-- Íconos Historial y Envío -->
+    <ImageView
+        android:id="@+id/historyIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/historial_digital"
+        android:contentDescription="Historial"
+        app:layout_constraintTop_toBottomOf="@+id/debitCardImageView"
+        app:layout_constraintEnd_toStartOf="@+id/sendIcon"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/historyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:text="Historial"
+        android:textColor="#FAF6F6"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/historyIcon"
+        app:layout_constraintTop_toBottomOf="@+id/historyIcon" />
+
+    <ImageView
+        android:id="@+id/sendIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/envio_digital"
+        android:contentDescription="Envío"
+        app:layout_constraintTop_toBottomOf="@+id/debitCardImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/sendText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoSizeTextType="uniform"
+        android:text="Envío"
+        android:textColor="#FAF6F6"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/sendIcon"
+        app:layout_constraintTop_toBottomOf="@+id/sendIcon" />
+
+    <!-- Movimientos Recientes -->
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="331dp"
+        android:layout_marginTop="24dp"
+        android:background="#001F5B"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendText"
+        app:layout_constraintWidth_percent="0.9">
+
+        <!-- Título "Movimientos" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Movimientos"
+            android:textColor="#FAF6F6"
+            android:textSize="24sp" />
+
+        <!-- Línea debajo del título -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FFFFFF" />
+
+        <!-- Movimiento 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="Transferencia"
+                android:src="@drawable/transferencia_digital" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transferencia SPEI Elena Olvera"
+                    android:textColor="#FAF6F6"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- $10,500.00"
+                    android:textColor="#FAF6F6"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Movimiento 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="Netflix"
+                android:src="@drawable/netflix_digital" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Netflix Online"
+                    android:textColor="#FAF6F6"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- $300.00"
+                    android:textColor="#FAF6F6"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Movimiento 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="Mercado Libre"
+                android:src="@drawable/mercado_libre" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mercado Libre Online"
+                    android:textColor="#FAF6F6"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- $700.00"
+                    android:textColor="#FAF6F6"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="57dp"
+        android:layout_height="52dp"
+        android:src="@drawable/regreso_digital"
+        android:layout_marginTop="19dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
